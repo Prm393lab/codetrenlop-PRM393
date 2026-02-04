@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:codeprm/pages/Products.dart';
+import 'package:codeprm/pages/ProductListPage.dart';
 
-void main() => runApp((MyApp()));
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  Center bodyApp() => Center(child: Text('First App'));
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return MaterialApp(home: ProductPage());
+    return MaterialApp(
+      title: 'Product List',
+      theme: ThemeData(primarySwatch: Colors.green),
+      home: ProductListPage1(),
+    );
   }
 }
