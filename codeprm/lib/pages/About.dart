@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:codeprm/pages/ProductListPage1.dart';
 
 class AboutPage extends StatelessWidget {
   const AboutPage({super.key});
@@ -11,9 +12,22 @@ class AboutPage extends StatelessWidget {
         backgroundColor: Colors.green,
         leading: Icon(Icons.menu),
         title: Center(child: Text("About me")),
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.search))],
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProductListPage1()),
+              );
+            },
+            icon: Icon(Icons.search),
+          ),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        onTap: (index) => {
+          if (index == 0) {Navigator.of(context).pop()},
+        },
         backgroundColor: Colors.greenAccent,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "home"),
@@ -60,13 +74,13 @@ class AboutContent extends StatelessWidget {
         height: 250,
         child: Card(
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(50),
+            borderRadius: BorderRadiusGeometry.circular(50),
           ),
           child: Column(
             children: [
               SizedBox(height: 20),
               Text(
-                "Con Cho Cao Bang Bo Pc",
+                "Do Mixi",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 25,
